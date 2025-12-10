@@ -1,0 +1,228 @@
+:root {
+    --color-primario: #1e3a8a;
+    --color-secundario: #f59e0b;
+    --color-blanco: #ffffff;
+    --color-gris-claro: #f8fafc;
+}
+
+body {
+    background-color: var(--color-gris-claro);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Estilos del Carrusel */
+.carrusel-imagen {
+    height: 500px;
+    object-fit: cover;
+    filter: brightness(0.8);
+}
+
+.carousel-indicators {
+    bottom: 20px;
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 5px;
+    background-color: var(--color-primario);
+    border: 2px solid var(--color-blanco);
+}
+
+.carousel-indicators button.active {
+    background-color: var(--color-secundario);
+    transform: scale(1.2);
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    padding: 25px;
+    bottom: 40px;
+}
+
+.carousel-caption h3 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.carousel-caption p {
+    font-size: 1.3rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(30, 58, 138, 0.7);
+    border-radius: 50%;
+    padding: 15px;
+    background-size: 60%;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: var(--color-primario);
+}
+
+/* Resto de estilos */
+.card-libro {
+    transition: transform 0.2s ease-in-out;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card-libro:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.btn-primary {
+    background-color: var(--color-primario);
+    border-color: var(--color-primario);
+}
+
+.btn-warning {
+    background-color: var(--color-secundario);
+    border-color: var(--color-secundario);
+    color: #000;
+}
+
+.bg-primary {
+    background-color: var(--color-primario) !important;
+}
+
+.text-warning {
+    color: var(--color-secundario) !important;
+}
+
+.estado-disponible {
+    color: #059669;
+    font-weight: bold;
+}
+
+.estado-prestado {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+.estado-reservado {
+    color: #d97706;
+    font-weight: bold;
+}
+
+/* Mejoras para mensajes de bienvenida */
+#titulo-bienvenida {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+#mensaje-bienvenida {
+    font-size: 1.3rem;
+    color: #4b5563;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .carrusel-imagen {
+        height: 300px;
+    }
+    
+    .carousel-caption {
+        padding: 15px;
+        bottom: 20px;
+    }
+    
+    .carousel-caption h3 {
+        font-size: 1.5rem;
+    }
+    
+    .carousel-caption p {
+        font-size: 1rem;
+    }
+    
+    #titulo-bienvenida {
+        font-size: 2rem;
+    }
+    
+    #mensaje-bienvenida {
+        font-size: 1.1rem;
+    }
+}
+
+/* Mejoras para las tarjetas de libros en móviles */
+@media (max-width: 576px) {
+    .col-md-4 {
+        margin-bottom: 1rem;
+    }
+    
+    .card-libro {
+        margin: 0 10px;
+    }
+}
+
+/* Efectos de hover para botones */
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Estilos para los modales */
+.modal-header {
+    border-bottom: 2px solid var(--color-secundario);
+}
+
+.modal-footer {
+    border-top: 1px solid #dee2e6;
+}
+
+/* Mejoras visuales para los estados */
+.estado-disponible, .estado-prestado, .estado-reservado {
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+}
+
+.estado-disponible {
+    background-color: #d1fae5;
+}
+
+.estado-prestado {
+    background-color: #fee2e2;
+}
+
+.estado-reservado {
+    background-color: #fef3c7;
+}
+
+/* ===== NUEVOS ESTILOS AGREGADOS ===== */
+
+/* Transiciones suaves entre vistas */
+#vista-inicial, #vista-catalogo {
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Efectos de carga */
+.cargando {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Mejoras para la vista del catálogo */
+#contenedor-libros {
+    min-height: 400px;
+}
+
+#controles-administrador {
+    transition: all 0.3s ease;
+}
